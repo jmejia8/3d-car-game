@@ -1,0 +1,216 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Streets/SimpleRoad.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Streets/StreetIntersection.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Streets/SlopingStreet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Streets/CurvedStreet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Streets/StreetIntersectionT.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Material/AsphatLine.tres" type="Material" id=6]
+[ext_resource path="res://Material/Asphalt.tres" type="Material" id=7]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[node name="Level0" type="Spatial"]
+
+[node name="Street" type="Spatial" parent="."]
+
+[node name="SimpleRoad" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.45, 0, 0, -2.3744 )
+
+[node name="SimpleRoad8" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 56.8413, 6.30886, 21.187 )
+
+[node name="SimpleRoad2" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0194798, 0, 42.1409 )
+
+[node name="SimpleRoad4" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.0621, 0, 46.5381 )
+
+[node name="SimpleRoad5" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.0621, 0, 35.9602 )
+
+[node name="SimpleRoad3" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -0.25, 0, 1, 0, 1, 0, -1.09278e-08, -17.2524, 0, 59.8145 )
+
+[node name="SimpleRoad6" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18.636, 0, 21.1501 )
+
+[node name="SimpleRoad7" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13.2981, 0, -49.5575 )
+
+[node name="SimpleRoad9" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -2.25, 0, 1, 0, 1, 0, -9.83506e-08, 84.2444, 0, 0.684938 )
+
+[node name="SimpleRoad14" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 4.77147e-07, 0, 1, 0, -1.50996e-07, 0, -3.16, 56.4545, 0, 30.6315 )
+
+[node name="SimpleRoad15" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( 7.54979e-08, 0, 3.1, 0, 1, 0, -1, 0, 2.34044e-07, 32.0936, 0, 59.8157 )
+
+[node name="SimpleRoad11" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -0.42, 0, 1, 0, 1, 0, -1.83588e-08, 15.5121, 0, -25.7776 )
+
+[node name="SimpleRoad12" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -0.6, 0, 1, 0, 1, 0, -2.62268e-08, 16.4661, 0, 21.1955 )
+
+[node name="SimpleRoad13" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -0.6, 0, 1, 0, 1, 0, -2.62268e-08, 97.1026, 0, 21.1955 )
+
+[node name="SimpleRoad10" parent="Street" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, 3.92589e-08, 0, 1, 0, -1.50996e-07, 0, -0.26, 31.0627, 0, -8.59496 )
+
+[node name="StreetIntersection" parent="Street" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21.1667 )
+
+[node name="SlopingStreet" parent="Street" instance=ExtResource( 3 )]
+transform = Transform( -2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 24.9336, 0, 21.1839 )
+
+[node name="SlopingStreet2" parent="Street" instance=ExtResource( 3 )]
+transform = Transform( 3.0598e-07, 0, -1, 0, 1, 0, 1, 0, 3.0598e-07, 88.6881, 0, 21.1839 )
+
+[node name="CurvedStreet" parent="Street" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.4574, 0, 55.0541 )
+
+[node name="CurvedStreet2" parent="Street" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.2849, 0, 59.8197 )
+
+[node name="CurvedStreet8" parent="Street" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35.7742, 0, 0.758324 )
+
+[node name="CurvedStreet6" parent="Street" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 108.23, 0, 16.4173 )
+
+[node name="CurvedStreet7" parent="Street" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 103.446, 0, 0.748402 )
+
+[node name="CurvedStreet3" parent="Street" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -31.0847, 0, 25.8387 )
+
+[node name="CurvedStreet4" parent="Street" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.00566602, 0, -44.7701 )
+
+[node name="CurvedStreet5" parent="Street" instance=ExtResource( 4 )]
+transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 26.2752, 0, -49.5576 )
+
+[node name="StreetIntersection2" parent="Street" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.7711 )
+
+[node name="StreetIntersection3" parent="Street" instance=ExtResource( 5 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 31.0739, 0, -25.8132 )
+
+[node name="StreetIntersection4" parent="Street" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 56.439, 0, 0.693252 )
+
+[node name="StreetIntersection5" parent="Street" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0894737, 0, 59.8297 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 11, 0, 0, 0, 2, 0, 0, 0, 18, 15.8444, 1.09035, -3.55133 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="."]
+transform = Transform( -4.80825e-07, 0, 18, 0, 2, 0, -11, 0, -7.86805e-07, 55.2391, 1.09035, -14.7016 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance9/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 11, 0, 0, 0, 2, 0, 0, 0, 18, -15.6482, 1.09035, -2.07492 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance3/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="."]
+transform = Transform( -4.80825e-07, 0, -18, 0, 2, 0, 11, 0, -7.86805e-07, 22.9589, 1.09035, 36.7837 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance10/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 11, 0, 0, 0, 2, 0, 0, 0, 7, 15.8444, 1.09035, -36.8841 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="."]
+transform = Transform( -4.80825e-07, 0, -7, 0, 2, 0, 11, 0, -3.0598e-07, -14.8034, 1.09035, 40.3175 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance8/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 80, 0, 0, 0, 2, 0, 0, 0, 0.5, 39.351, 1.53937, -62.439 )
+mesh = SubResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance4/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( 80, 0, 0, 0, 2, 0, 0, 0, 0.5, 38.4574, 1.53937, 64.8006 )
+mesh = SubResource( 4 )
+material/0 = ExtResource( 7 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance5/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="."]
+transform = Transform( -3.49691e-06, 0, -0.5, 0, 2, 0, 80, 0, -2.18557e-08, -36.1145, 1.53937, 4.70842 )
+mesh = SubResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance6/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="."]
+transform = Transform( -3.49691e-06, 0, -0.5, 0, 2, 0, 80, 0, -2.18557e-08, 113.152, 1.53937, 4.70842 )
+mesh = SubResource( 4 )
+material/0 = ExtResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance7/StaticBody"]
+shape = SubResource( 5 )

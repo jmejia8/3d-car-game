@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="FrontalSensors" type="Spatial"]
+
+[node name="Front" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Front"]
+transform = Transform( 0.0698453, 0, -0.715656, 0, 0.1, 0, 0.0715656, 0, 0.698453, -0.604056, 0, 0.700839 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="Front"]
+transform = Transform( 0.070296, 0, 0.711229, 0, 0.1, 0, -0.0711229, 0, 0.70296, 0.66814, 0, 0.650704 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="FrontSmall" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, 0.8 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FrontSmall"]
+transform = Transform( 0.0698453, 0, -0.715656, 0, 0.1, 0, 0.0715656, 0, 0.698453, -0.604056, 0, 0.700839 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="FrontSmall"]
+transform = Transform( 0.070296, 0, 0.711229, 0, 0.1, 0, -0.0711229, 0, 0.70296, 0.66814, 0, 0.650704 )
+visible = false
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="Right" type="RayCast" parent="."]
+transform = Transform( 0.866026, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866026, 1, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, 3 )
+
+[node name="Left" type="RayCast" parent="."]
+transform = Transform( 0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, -1, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, 3 )

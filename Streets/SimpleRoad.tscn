@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://obj/SimpleRoad.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Material/Asphalt.tres" type="Material" id=2]
+[ext_resource path="res://Material/AsphatLine.tres" type="Material" id=3]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( 4.3472, 0, 5.2975, 4.3472, 0, -5.2975, 5.2975, -0.8188, 5.2975, 5.2975, -0.8188, 5.2975, 4.3472, 0, -5.2975, 5.2975, -0.8188, -5.2975, 3.985, 0, 5.2975, 3.985, 0, -5.2975, 4.3472, 0, 5.2975, 4.3472, 0, 5.2975, 3.985, 0, -5.2975, 4.3472, 0, -5.2975, 0, 0, 5.2975, 0, 0, -5.2975, 3.7449, 0, 5.2975, 3.7449, 0, 5.2975, 0, 0, -5.2975, 3.7449, 0, -5.2975, -5.2975, -0.8188, -5.2975, -4.3472, 0, -5.2975, -5.2975, -0.8188, 5.2975, -5.2975, -0.8188, 5.2975, -4.3472, 0, -5.2975, -4.3472, 0, 5.2975, -4.3472, 0, -5.2975, -3.985, 0, -5.2975, -4.3472, 0, 5.2975, -4.3472, 0, 5.2975, -3.985, 0, -5.2975, -3.985, 0, 5.2975, -3.7449, 0, -5.2975, 0, 0, -5.2975, -3.7449, 0, 5.2975, -3.7449, 0, 5.2975, 0, 0, -5.2975, 0, 0, 5.2975, 3.7449, 0, 5.2975, 3.7449, 0, -5.2975, 3.985, 0, 5.2975, 3.985, 0, 5.2975, 3.7449, 0, -5.2975, 3.985, 0, -5.2975, -3.985, 0, -5.2975, -3.7449, 0, -5.2975, -3.985, 0, 5.2975, -3.985, 0, 5.2975, -3.7449, 0, -5.2975, -3.7449, 0, 5.2975 )
+
+[node name="SimpleRoad" type="Spatial"]
+
+[node name="SimpleRoad" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="SimpleRoad"]
+input_ray_pickable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="SimpleRoad/StaticBody"]
+shape = SubResource( 1 )
