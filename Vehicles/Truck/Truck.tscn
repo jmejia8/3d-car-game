@@ -22,37 +22,37 @@ surfaces/0 = {
 }
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.990502, 0.972033, 3.65002 )
+extents = Vector3( 0.52488, 0.588489, 1.8089 )
 
 [node name="Truck" type="VehicleBody"]
 mass = 500.0
 
 [node name="Wheel1" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.901125, 0.422931, 2.8171 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456206, 0.202853, 2.20192 )
 use_as_steering = true
 
 [node name="Wheel2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.949853, 0.422931, 2.8171 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.457094, 0.202853, 2.20192 )
 use_as_steering = true
 flip_mesh = true
 
 [node name="Wheel4" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.901125, 0.422931, -2.97156 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.456206, 0.202853, -0.678861 )
 use_as_traction = true
 
 [node name="Wheel5" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0.423, -2.97147 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.457241, 0.202922, -0.678771 )
 use_as_traction = true
 flip_mesh = true
 
 [node name="Truck" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.61853 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 1.61853 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57451, -0.00254619 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.749458, 0.783984 )
 shape = SubResource( 2 )
 
 [node name="FrontalSensors" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.711061, 3.61215 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670358, 2.57418 )

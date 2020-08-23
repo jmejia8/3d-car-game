@@ -1,28 +1,19 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Levels/Level0.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
 [ext_resource path="res://scripts/vehicle.gd" type="Script" id=3]
 [ext_resource path="res://Vehicles/Truck/Truck.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Cameras/CameraAroundCar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Drivers/IA.gd" type="Script" id=6]
 [ext_resource path="res://Drivers/User.gd" type="Script" id=7]
+[ext_resource path="res://Streets/Target.tscn" type="PackedScene" id=8]
 
-[sub_resource type="PlaneMesh" id=1]
-
-[sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.380392, 0.384314, 0.380392, 1 )
-metallic_specular = 0.0
-
-[sub_resource type="ConcavePolygonShape" id=3]
-data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
-
-[sub_resource type="SphereMesh" id=4]
-
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.634546, 0.576387, 1.82182 )
 
 [node name="Main" type="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.02317, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2455, 9.73793, 1.61471 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 2 )
@@ -36,81 +27,32 @@ script = ExtResource( 6 )
 [node name="vehicle" parent="Controller" groups=[
 "IA_driver",
 ] instance=ExtResource( 4 )]
-transform = Transform( -0.999999, 0, -7.99721e-08, 0, 1, 0, 7.99721e-08, 0, -0.999999, -24.3378, 0, -37.0413 )
+transform = Transform( -4.37113e-08, 0, -0.999999, 0, 1, 0, 0.999999, 0, -4.37113e-08, 30.0928, 0.0728617, 43.9908 )
 script = ExtResource( 3 )
-engine_force_value = 400
 reverse_engine_force_value = 400
 
-[node name="Controller6" type="Spatial" parent="."]
-script = ExtResource( 6 )
+[node name="Area" type="Area" parent="Controller/vehicle"]
+input_ray_pickable = false
+monitorable = false
 
-[node name="vehicle" parent="Controller6" groups=[
-"IA_driver",
-] instance=ExtResource( 4 )]
-transform = Transform( -0.999999, 0, -7.99721e-08, 0, 1, 0, 7.99721e-08, 0, -0.999999, -24.3378, 0, 17.7611 )
-script = ExtResource( 3 )
-engine_force_value = 400
-reverse_engine_force_value = 400
+[node name="CollisionShape" type="CollisionShape" parent="Controller/vehicle/Area"]
+transform = Transform( 0.999999, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 0.999999, -1.90735e-05, 0.773011, 0.736 )
+shape = SubResource( 1 )
 
-[node name="Controller2" type="Spatial" parent="."]
-script = ExtResource( 6 )
-
-[node name="vehicle" parent="Controller2" groups=[
-"IA_driver",
-] instance=ExtResource( 4 )]
-transform = Transform( 0.999999, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 0.999999, 7.08396, 0, -44.8041 )
-script = ExtResource( 3 )
-engine_force_value = 400
-reverse_engine_force_value = 400
-
-[node name="Controller3" type="Spatial" parent="."]
-script = ExtResource( 6 )
-
-[node name="vehicle" parent="Controller3" groups=[
-"IA_driver",
-] instance=ExtResource( 4 )]
-transform = Transform( -0.999999, 0, -7.99721e-08, 0, 1, 0, 7.99721e-08, 0, -0.999999, 32.3069, 0, -30.1761 )
-script = ExtResource( 3 )
-engine_force_value = 400
-reverse_engine_force_value = 400
-
-[node name="Controller4" type="Spatial" parent="."]
-script = ExtResource( 6 )
-
-[node name="vehicle" parent="Controller4" groups=[
-"IA_driver",
-] instance=ExtResource( 4 )]
-transform = Transform( -0.999999, 0, -7.99721e-08, 0, 1, 0, 7.99721e-08, 0, -0.999999, -54.5637, 0, 35.4191 )
-script = ExtResource( 3 )
-engine_force_value = 400
-reverse_engine_force_value = 400
-
-[node name="Controller5" type="Spatial" parent="."]
+[node name="Me" type="Spatial" parent="."]
 script = ExtResource( 7 )
 
-[node name="vehicle" parent="Controller5" groups=[
+[node name="vehicle" parent="Me" groups=[
 "IA_driver",
 ] instance=ExtResource( 4 )]
-transform = Transform( -0.999999, 0, -7.99721e-08, 0, 1, 0, 7.99721e-08, 0, -0.999999, -23.3155, 0, 35.4191 )
+transform = Transform( 2.98528e-07, 0, -0.999999, 0, 1, 0, 0.999999, 0, 2.98528e-07, 41.6992, 0.174932, 43.713 )
+input_ray_pickable = false
 script = ExtResource( 3 )
 engine_force_value = 400
 reverse_engine_force_value = 400
 
-[node name="CameraFollower" parent="Controller5/vehicle" instance=ExtResource( 5 )]
-transform = Transform( 0.994664, 0, 0.103174, 0, 1, 0, -0.103174, 0, 0.994664, 0, 0, 0 )
-
-[node name="Level0" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9781, 0, 0 )
-
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 80, 0, 0, 0, 50, 0, 0, 0, 70, 10.5543, -0.210371, 6.71223 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 2 )
-
-[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
-
-[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
-shape = SubResource( 3 )
+[node name="CameraFollower" parent="Me/vehicle" instance=ExtResource( 5 )]
+transform = Transform( -0.994664, 0, -0.103174, 0, 1, 0, 0.103174, 0, -0.994664, 3.8147e-06, 0, -7.62939e-06 )
 
 [node name="DirectionalLight2" type="DirectionalLight" parent="."]
 transform = Transform( 0.230521, -0.834973, -0.499679, 0.61581, -0.272412, 0.739303, -0.753417, -0.478133, 0.451388, -30.3956, 55.8894, 67.813 )
@@ -121,17 +63,40 @@ shadow_enabled = true
 shadow_color = Color( 0.792157, 0.792157, 0.792157, 1 )
 shadow_bias = -0.11
 
-[node name="Target" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 59.7848, 1.15564, 42.4404 )
+[node name="Targets" type="Spatial" parent="."]
 
-[node name="MeshInstance" type="MeshInstance" parent="Target"]
-mesh = SubResource( 4 )
-material/0 = null
+[node name="Target1" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -40.5262, 0.888566, 44.0811 )
 
-[node name="Area" type="Area" parent="Target/MeshInstance"]
-input_ray_pickable = false
+[node name="Target2" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44.1798, 0.888566, -33.8174 )
 
-[node name="CollisionShape" type="CollisionShape" parent="Target/MeshInstance/Area"]
-shape = SubResource( 5 )
+[node name="Target3" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.3653, 0.888566, -43.8308 )
 
-[editable path="Controller5/vehicle/CameraFollower"]
+[node name="Target4" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.8019, 0.888566, -43.8308 )
+
+[node name="Target5" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 28.5645, 0.888566, 2.43798 )
+
+[node name="Target6" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.75602, 0.888566, 2.43798 )
+
+[node name="Target7" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75602, 0.888566, 12.724 )
+
+[node name="Target8" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.6112, 0.888566, 12.0793 )
+
+[node name="Target9" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 91.1244, 0.888566, 12.0793 )
+
+[node name="Target10" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 92.2424, 0.888566, -9.94796 )
+
+[node name="Target11" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.3016, 0.888566, -20.3821 )
+
+[node name="GridMap" parent="." instance=ExtResource( 1 )]
+[connection signal="area_entered" from="Controller/vehicle/Area" to="Controller" method="_on_Area_area_entered"]
