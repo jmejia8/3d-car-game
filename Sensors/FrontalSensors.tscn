@@ -8,7 +8,7 @@
 
 [node name="Front" type="RayCast" parent="."]
 enabled = true
-cast_to = Vector3( 0, 0, 4 )
+cast_to = Vector3( 0, 0, 5 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Front"]
 transform = Transform( 0.0698453, 0, -0.715656, 0, 0.1, 0, 0.0715656, 0, 0.698453, -0.604056, 0, 0.700839 )

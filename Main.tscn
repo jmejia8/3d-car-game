@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Levels/Level1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
-[ext_resource path="res://scripts/vehicle.gd" type="Script" id=3]
+[ext_resource path="res://Vehicles/Truck/AutonomousTruck.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Vehicles/Truck/Truck.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Cameras/CameraAroundCar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Drivers/IA.gd" type="Script" id=6]
@@ -21,21 +21,117 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Controller" type="Spatial" parent="."]
+[node name="Controller" parent="." instance=ExtResource( 3 )]
+
+[node name="Controller2" type="Spatial" parent="."]
 script = ExtResource( 6 )
 
-[node name="vehicle" parent="Controller" groups=[
+[node name="vehicle" parent="Controller2" groups=[
 "IA_driver",
 ] instance=ExtResource( 4 )]
-transform = Transform( -4.37113e-08, 0, -0.999999, 0, 1, 0, 0.999999, 0, -4.37113e-08, 30.0928, 0.0728617, 43.9908 )
-script = ExtResource( 3 )
-reverse_engine_force_value = 400
+transform = Transform( -4.37113e-08, 0, -0.999999, 0, 1, 0, 0.999999, 0, -4.37113e-08, 33.559, 0.0728617, 46.1025 )
 
-[node name="Area" type="Area" parent="Controller/vehicle"]
+[node name="Area" type="Area" parent="Controller2/vehicle"]
 input_ray_pickable = false
 monitorable = false
 
-[node name="CollisionShape" type="CollisionShape" parent="Controller/vehicle/Area"]
+[node name="CollisionShape" type="CollisionShape" parent="Controller2/vehicle/Area"]
+transform = Transform( 0.999999, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 0.999999, -1.90735e-05, 0.773011, 0.736 )
+shape = SubResource( 1 )
+
+[node name="Controller3" type="Spatial" parent="."]
+script = ExtResource( 6 )
+
+[node name="vehicle" parent="Controller3" groups=[
+"IA_driver",
+] instance=ExtResource( 4 )]
+transform = Transform( -4.37113e-08, 0, -0.999999, 0, 1, 0, 0.999999, 0, -4.37113e-08, 34.9416, 0.0728617, 42.2192 )
+
+[node name="Area" type="Area" parent="Controller3/vehicle"]
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Controller3/vehicle/Area"]
+transform = Transform( 0.999999, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 0.999999, -1.90735e-05, 0.773011, 0.736 )
+shape = SubResource( 1 )
+
+[node name="Controller4" type="Spatial" parent="."]
+script = ExtResource( 6 )
+
+[node name="vehicle" parent="Controller4" groups=[
+"IA_driver",
+] instance=ExtResource( 4 )]
+transform = Transform( -4.37113e-08, 0, -0.999999, 0, 1, 0, 0.999999, 0, -4.37113e-08, 19.2126, 0.0728617, 42.2192 )
+
+[node name="Area" type="Area" parent="Controller4/vehicle"]
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Controller4/vehicle/Area"]
+transform = Transform( 0.999999, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 0.999999, -1.90735e-05, 0.773011, 0.736 )
+shape = SubResource( 1 )
+
+[node name="Controller5" type="Spatial" parent="."]
+script = ExtResource( 6 )
+
+[node name="vehicle" parent="Controller5" groups=[
+"IA_driver",
+] instance=ExtResource( 4 )]
+transform = Transform( -4.37113e-08, 0, -0.999999, 0, 1, 0, 0.999999, 0, -4.37113e-08, 22.9558, 0.0728617, 45.1956 )
+
+[node name="Area" type="Area" parent="Controller5/vehicle"]
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Controller5/vehicle/Area"]
+transform = Transform( 0.999999, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 0.999999, -1.90735e-05, 0.773011, 0.736 )
+shape = SubResource( 1 )
+
+[node name="Controller6" type="Spatial" parent="."]
+script = ExtResource( 6 )
+
+[node name="vehicle" parent="Controller6" groups=[
+"IA_driver",
+] instance=ExtResource( 4 )]
+transform = Transform( -4.37113e-08, 0, -0.999999, 0, 1, 0, 0.999999, 0, -4.37113e-08, 22.9558, 0.0728617, 45.1956 )
+
+[node name="Area" type="Area" parent="Controller6/vehicle"]
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Controller6/vehicle/Area"]
+transform = Transform( 0.999999, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 0.999999, -1.90735e-05, 0.773011, 0.736 )
+shape = SubResource( 1 )
+
+[node name="Controller7" type="Spatial" parent="."]
+script = ExtResource( 6 )
+
+[node name="vehicle" parent="Controller7" groups=[
+"IA_driver",
+] instance=ExtResource( 4 )]
+transform = Transform( -4.37113e-08, 0, -0.999999, 0, 1, 0, 0.999999, 0, -4.37113e-08, 12.3264, 0.0728617, 45.1956 )
+
+[node name="Area" type="Area" parent="Controller7/vehicle"]
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Controller7/vehicle/Area"]
+transform = Transform( 0.999999, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 0.999999, -1.90735e-05, 0.773011, 0.736 )
+shape = SubResource( 1 )
+
+[node name="Controller8" type="Spatial" parent="."]
+script = ExtResource( 6 )
+
+[node name="vehicle" parent="Controller8" groups=[
+"IA_driver",
+] instance=ExtResource( 4 )]
+transform = Transform( -4.37113e-08, 0, -0.999999, 0, 1, 0, 0.999999, 0, -4.37113e-08, -30.8717, 0.0728617, 42.6998 )
+
+[node name="Area" type="Area" parent="Controller8/vehicle"]
+input_ray_pickable = false
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Controller8/vehicle/Area"]
 transform = Transform( 0.999999, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 0.999999, -1.90735e-05, 0.773011, 0.736 )
 shape = SubResource( 1 )
 
@@ -47,12 +143,9 @@ script = ExtResource( 7 )
 ] instance=ExtResource( 4 )]
 transform = Transform( 2.98528e-07, 0, -0.999999, 0, 1, 0, 0.999999, 0, 2.98528e-07, 41.6992, 0.174932, 43.713 )
 input_ray_pickable = false
-script = ExtResource( 3 )
-engine_force_value = 400
-reverse_engine_force_value = 400
 
 [node name="CameraFollower" parent="Me/vehicle" instance=ExtResource( 5 )]
-transform = Transform( -0.994664, 0, -0.103174, 0, 1, 0, 0.103174, 0, -0.994664, 3.8147e-06, 0, -7.62939e-06 )
+transform = Transform( -0.994664, 0, -0.103174, 0, 1, 0, 0.103174, 0, -0.994664, 0, 0, 0 )
 
 [node name="DirectionalLight2" type="DirectionalLight" parent="."]
 transform = Transform( 0.230521, -0.834973, -0.499679, 0.61581, -0.272412, 0.739303, -0.753417, -0.478133, 0.451388, -30.3956, 55.8894, 67.813 )
@@ -78,16 +171,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.3653, 0.888566, -43.8308 )
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.8019, 0.888566, -43.8308 )
 
 [node name="Target5" parent="Targets" instance=ExtResource( 8 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 28.5645, 0.888566, 2.43798 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 27.5644, 0.888566, 2.91264 )
 
 [node name="Target6" parent="Targets" instance=ExtResource( 8 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.75602, 0.888566, 2.43798 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.1424, 0.888566, 2.98197 )
 
 [node name="Target7" parent="Targets" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75602, 0.888566, 12.724 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.6768, 0.888566, -8.00036 )
+
+[node name="Target12" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9591, 0.888566, -11.8834 )
+
+[node name="Target13" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9591, 8.49743, 35.7698 )
+
+[node name="Target14" parent="Targets" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 42.6204, 8.49743, 35.834 )
 
 [node name="Target8" parent="Targets" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.6112, 0.888566, 12.0793 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.7512, 8.63923, 13.5801 )
 
 [node name="Target9" parent="Targets" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 91.1244, 0.888566, 12.0793 )
@@ -99,4 +201,10 @@ transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926,
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.3016, 0.888566, -20.3821 )
 
 [node name="GridMap" parent="." instance=ExtResource( 1 )]
-[connection signal="area_entered" from="Controller/vehicle/Area" to="Controller" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="Controller2/vehicle/Area" to="Controller2" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="Controller3/vehicle/Area" to="Controller3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="Controller4/vehicle/Area" to="Controller4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="Controller5/vehicle/Area" to="Controller5" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="Controller6/vehicle/Area" to="Controller6" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="Controller7/vehicle/Area" to="Controller7" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="Controller8/vehicle/Area" to="Controller8" method="_on_Area_area_entered"]

@@ -8,6 +8,12 @@ func _ready():
 
 func _physics_process(delta):
 
+	if Input.is_action_pressed("ui_down"):
+		vehicle.play_horn()
+	else:
+		vehicle.horn.playing = false
+		
+
 	if Input.is_action_pressed("ui_up"):
 		vehicle.accelerate()
 	else:

@@ -1,12 +1,12 @@
 extends Camera
 
-export var min_distance = 5
-export var max_distance = 10.0
+export var min_distance = 4
+export var max_distance = 8.0
 
 
 var collision_exception = []
-var max_height = 20.0
-var min_height = 2
+var max_height = 15.0
+var min_height = 4
 
 var mouse_sens = 0.08
 
