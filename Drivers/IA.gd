@@ -13,6 +13,7 @@ var target_idx
 var targets
 var stop = false
 
+var time_to_respawn = 0
 
 func _ready():
 	steer_target_last = 1 if rand_range(0,1) > 0.5 else -1
@@ -32,7 +33,6 @@ func _ready():
 	#target = get_parent().get_node("Targets/Target1")
 	var targets_container = get_parent().get_node("Targets")
 	if not targets_container:
-		print("No targets")
 		stop = true
 		return
 
@@ -107,7 +107,7 @@ func set_targets(targts):
 	target_idx = 0
 	target = targets[0]
 	stop = false
-	print(target.transform.origin)
+	
 
 func _physics_process(delta):
 	if not target or stop:
@@ -118,6 +118,23 @@ func _physics_process(delta):
 	var directions = naive_control()
 	vehicle.go_there(directions, delta)
 	
+
+
+func _process(delta):
+	if vehicle.is_overturned():
+		time_to_respawn += delta
+	else:
+		time_to_respawn = 0
+		
+	if time_to_respawn >= 10 and not is_in_group("user"):
+		print("Delete: ", vehicle.name)
+		queue_free()
+		return
+		print(name)
+		print(transform.origin)
+		#print(initial_position)
+		
+		#transform = initial_position
 
 func next_target(checkpoint):
 	#print(checkpoint.name , " <>  ",  targets[target_idx].name)
@@ -131,10 +148,8 @@ func next_target(checkpoint):
 func _on_Area_area_entered(area):
 	
 	if area.is_in_group("target") &&  area.get_parent().name == targets[target_idx].name:
-		print("Target = ", area.get_parent().name)
 		target_idx += 1
 		if target_idx >= len(targets):
-			print("win--")
 			stop = true
 		else:
 			target = targets[target_idx]

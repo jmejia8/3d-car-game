@@ -13,11 +13,14 @@ export var engine_force_value = 400
 export var reverse_engine_force_value = 400
 export var max_speed = 110
 
+
 var engine_sound
 var horn
 
+
+
 var gear_shifts = [ 2.5, 1, 0.5, 0.2 ]
-var gear = 1
+var gear = 0
 
 func _ready():
 	engine_sound = get_node("EngineSound")
@@ -25,10 +28,11 @@ func _ready():
 	
 func _physics_process(delta):
 	var v = get_speed()
-	engine_sound.pitch_scale = 0.5 + 6*(v / max_speed)
+	if engine_sound:
+		engine_sound.pitch_scale = 0.5 + 6*(v / max_speed)
 
 func play_horn():
-	if not horn.playing:
+	if horn and not horn.playing:
 		horn.playing = true
 
 # Car Actions
@@ -64,7 +68,7 @@ func accelerate():
 	
 
 func apply_brake():
-	brake = 40.0
+	brake = 50*mass/1000
 	
 func reverse():
 	var fwd_mps = transform.basis.xform_inv(linear_velocity).z
@@ -99,7 +103,15 @@ func slow_down(v):
 	else:
 		accelerate()
 
+func is_overturned():
+	return not (
+	get_node("Wheel1").is_in_contact() or
+	get_node("Wheel2").is_in_contact() or
+	get_node("Wheel4").is_in_contact() or
+	get_node("Wheel5").is_in_contact()
+	)
 
 
-
+		
+	
 

@@ -1,34 +1,47 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Vehicles/Van/VanMesh.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sensors/FrontalSensors.tscn" type="PackedScene" id=2]
 [ext_resource path="res://wheels/Wheel1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/vehicle.gd" type="Script" id=4]
 
-[sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.990502, 1.30983, 3.65002 )
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.492342, 0.439858, 0.964463 )
 
 [node name="Van" type="VehicleBody"]
+mass = 300.0
+script = ExtResource( 4 )
+engine_force_value = 300
+reverse_engine_force_value = 300
 
 [node name="Wheel1" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.901125, 0.422931, 1.19857 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.460807, 0.0368222, 0.606247 )
+use_as_traction = true
 use_as_steering = true
+wheel_rest_length = 0.1
 
 [node name="Wheel2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.949853, 0.422931, 1.19857 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.459914, 0.0368222, 0.606247 )
+use_as_traction = true
 use_as_steering = true
+wheel_rest_length = 0.1
 flip_mesh = true
 
 [node name="Wheel4" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.901125, 0.422931, -1.28628 )
-use_as_traction = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.460807, 0.0368222, -0.612548 )
+wheel_rest_length = 0.1
 
 [node name="Wheel5" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95, 0.423, -1.2862 )
-use_as_traction = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.460061, 0.0368912, -0.612468 )
+wheel_rest_length = 0.1
 flip_mesh = true
 
 [node name="Van" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.170326, 0.0125518 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57451, -1.62108 )
-shape = SubResource( 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447178, 0.0305991 )
+shape = SubResource( 2 )
+
+[node name="FrontalSensors" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326192, 0.948091 )

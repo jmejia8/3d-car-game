@@ -21,8 +21,10 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("ui_down"):
 		vehicle.reverse()
-	else:
-		vehicle.brake = 0.0
+
+		
+	if Input.is_action_pressed("brake"):
+		vehicle.apply_brake()
 	
 	var dir = Input.get_action_strength("ui_left") - Input.get_action_strength("ui_right")
 	vehicle.turn_steering(dir, delta)
